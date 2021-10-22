@@ -3,8 +3,8 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 courses = ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text='💻 Foundation'),
             KeyboardButton(text='🧑‍💻 Dasturlash'),
+            KeyboardButton(text='💻 Boshqa kurslar'),
         ],
     ],
     resize_keyboard=True,

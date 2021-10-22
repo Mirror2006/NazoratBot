@@ -11,7 +11,7 @@ async def enter_data(message: types.Message):
     await Question.full_name.set()
 
 
-@dp.message_handler(text_contains="Foundation", state=PersonalData.password)
+@dp.message_handler(text_contains="Boshqa kurslar", state=PersonalData.password)
 async def enter_data(message: types.Message):
     await message.answer("To'liq ismingizni kiriting")
     await PersonalData.next()
@@ -48,16 +48,6 @@ async def answer_phone(message: types.Message, state: FSMContext):
     )
     await message.answer(f"{questions['Found'][0]}")
     await PersonalData.next()
-    #     Ma'lumotlarni qayta o'qiymiz
-    # data = await state.get_data()
-    # name = data.get('full_name')
-    # phone_number = data.get('phone_number')
-    #
-    # msg = "📄 <b>Quyidagi ma'lumotlar qabul qilindi:</b>\n\n"
-    # msg += f"🙎‍♂️ <b>Topshiruvchi - {name}</b>\n"
-    # msg += f"📞 <b>Telefon raqam - {phone_number}</b>\n"
-    # await message.answer(msg)
-    # await state.finish()
 
 
 @dp.message_handler(state=Question.phone_number)
@@ -80,19 +70,6 @@ async def answer_phone(message: types.Message, state: FSMContext):
     )
     await message.answer(f"{questions['Found'][1]}")
     await PersonalData.next()
-    #
-    # # Ma'lumotlarni qayta o'qiymiz
-    # data = await state.get_data()
-    # name = data.get('full_name')
-    # phone_number = data.get('phone_number')
-    # answer = data.get('answer')
-    #
-    # msg = "📄 <b>Quyidagi ma'lumotlar qabul qilindi:</b>\n\n"
-    # msg += f"🙎‍♂️ <b>Topshiruvchi - {name}</b>\n"
-    # msg += f"📞 <b>Telefon raqam - {phone_number}</b>\n\n"
-    # msg += f"❓ <b>Savol - {answer}</b>"
-    # await message.answer(msg)
-    # await PersonalData.previous()
 
 
 @dp.message_handler(state=Question.questionFound1)
