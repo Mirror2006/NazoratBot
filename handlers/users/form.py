@@ -1,7 +1,8 @@
 from aiogram import types
 from aiogram.dispatcher import FSMContext
+from data.config import ADMINS, CHANNELS
 from data.questions import questions
-from loader import dp
+from loader import dp, bot
 from states.personalData import PersonalData, Question
 
 
@@ -24,6 +25,8 @@ async def answer_fullname(message: types.Message, state: FSMContext):
     await state.update_data(
         {'full_name': full_name}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer("Telefon raqamingizni kiriting")
     await PersonalData.next()
 
@@ -35,6 +38,8 @@ async def answer_fullname(message: types.Message, state: FSMContext):
     await state.update_data(
         {'full_name': full_name}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer("Telefon raqamingizni kiriting")
     await Question.next()
 
@@ -46,6 +51,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'phone_number': phone_number}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Found'][0]}")
     await PersonalData.next()
 
@@ -57,6 +64,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'phone_number': phone_number}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Dev'][0]}")
     await Question.next()
 
@@ -68,6 +77,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer1': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Found'][1]}")
     await PersonalData.next()
 
@@ -79,6 +90,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer1': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Dev'][1]}")
     await Question.next()
 
@@ -90,6 +103,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer2': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Found'][2]}")
     await PersonalData.next()
 
@@ -101,6 +116,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer2': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Dev'][2]}")
     await Question.next()
 
@@ -112,6 +129,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer3': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Found'][3]}")
     await PersonalData.next()
 
@@ -123,6 +142,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer3': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Dev'][3]}")
     await Question.next()
 
@@ -134,6 +155,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer4': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Found'][4]}")
     await PersonalData.next()
 
@@ -145,6 +168,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer4': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Dev'][4]}")
     await Question.next()
 
@@ -156,6 +181,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer5': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Found'][5]}")
     await PersonalData.next()
 
@@ -167,6 +194,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer5': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Dev'][5]}")
     await Question.next()
 
@@ -178,6 +207,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer6': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Found'][6]}")
     await PersonalData.next()
 
@@ -189,6 +220,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer6': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Dev'][6]}")
     await Question.next()
 
@@ -200,6 +233,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer7': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Found'][7]}")
     await PersonalData.next()
 
@@ -211,6 +246,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer7': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Dev'][7]}")
     await Question.next()
 
@@ -222,6 +259,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer8': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Found'][8]}")
     await PersonalData.next()
 
@@ -233,6 +272,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer8': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Dev'][8]}")
     await Question.next()
 
@@ -244,6 +285,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer9': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Found'][9]}")
     await PersonalData.next()
 
@@ -255,6 +298,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer9': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Dev'][9]}")
     await Question.next()
 
@@ -266,6 +311,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer10': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Found'][10]}")
     await PersonalData.next()
 
@@ -277,6 +324,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer10': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Dev'][10]}")
     await Question.next()
 
@@ -288,6 +337,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer11': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Found'][11]}")
     await PersonalData.next()
 
@@ -299,6 +350,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer11': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Dev'][11]}")
     await Question.next()
 
@@ -310,6 +363,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer12': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Found'][12]}")
     await PersonalData.next()
 
@@ -321,6 +376,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer12': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Dev'][12]}")
     await Question.next()
 
@@ -332,6 +389,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer13': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Found'][13]}")
     await PersonalData.next()
 
@@ -343,6 +402,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer13': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Dev'][13]}")
     await Question.next()
 
@@ -354,6 +415,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer14': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Found'][14]}")
     await PersonalData.next()
 
@@ -365,6 +428,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer14': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Dev'][14]}")
     await Question.next()
 
@@ -376,7 +441,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer15': answer}
     )
-
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     # Ma'lumotlarni qayta o'qiymiz
     data = await state.get_data()
     name = data.get('full_name')
@@ -416,7 +482,9 @@ async def answer_phone(message: types.Message, state: FSMContext):
     msg += f"❓ <b>{questions['Found'][13]}</b> - <i>{a14}</i>\n"
     msg += f"❓ <b>{questions['Found'][14]}</b> - <i>{a15}</i>\n\n"
     msg1 = f"👨‍💻 Amaliy topshiriq\n\n \t<b>{questions['Practical']}</b>\n\n⚠️ <i>Barchasini qilib bo'lgach nazoratchiga ko'rsating!</i>"
-    await message.answer(msg)
+    for i in ADMINS:
+        await bot.send_message(i, msg)
+    await bot.send_message(CHANNELS[0], msg)
     await message.answer(msg1)
     await state.finish()
 
@@ -428,6 +496,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer15': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Dev'][15]}")
     await Question.next()
 
@@ -439,6 +509,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer16': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Dev'][16]}")
     await Question.next()
 
@@ -450,6 +522,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer17': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Dev'][17]}")
     await Question.next()
 
@@ -461,6 +535,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer18': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Dev'][18]}")
     await Question.next()
 
@@ -472,6 +548,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer19': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Dev'][19]}")
     await Question.next()
 
@@ -483,6 +561,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer20': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Dev'][20]}")
     await Question.next()
 
@@ -494,6 +574,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer21': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Dev'][21]}")
     await Question.next()
 
@@ -505,6 +587,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer22': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Dev'][22]}")
     await Question.next()
 
@@ -516,6 +600,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer23': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Dev'][23]}")
     await Question.next()
 
@@ -527,6 +613,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer24': answer}
     )
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     await message.answer(f"{questions['Dev'][24]}")
     await Question.next()
 
@@ -538,7 +626,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     await state.update_data(
         {'answer25': answer}
     )
-
+    await bot.delete_message(message.chat.id, message.message_id - 1)
+    await bot.delete_message(message.chat.id, message.message_id)
     # Ma'lumotlarni qayta o'qiymiz
     data = await state.get_data()
     name = data.get('full_name')
@@ -598,6 +687,8 @@ async def answer_phone(message: types.Message, state: FSMContext):
     msg += f"❓ <b>{questions['Dev'][23]}</b> - <i>{a24}</i>\n"
     msg += f"❓ <b>{questions['Dev'][24]}</b> - <i>{a25}</i>\n"
     msg1 = f"👨‍💻 Amaliy topshiriq\n\n \t<b>{questions['Practical']}</b>\n\n⚠️ <i>Barchasini qilib bo'lgach nazoratchiga ko'rsating!</i>"
-    await message.answer(msg)
+    for i in ADMINS:
+        await bot.send_message(i, msg)
+    await bot.send_message(CHANNELS[0], msg)
     await message.answer(msg1)
     await state.finish()
